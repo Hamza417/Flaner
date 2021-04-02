@@ -39,7 +39,7 @@ public class Utils {
         ValueAnimator valueAnimator = ValueAnimator.ofObject(new ArgbEvaluatorCompat(),
                 view.getBackgroundTintList().getDefaultColor(),
                 endColor);
-        valueAnimator.setDuration(300L);
+        valueAnimator.setDuration(500L);
         valueAnimator.setInterpolator(new DecelerateInterpolator(1.5F));
         valueAnimator.addUpdateListener(animation -> view.setBackgroundTintList(ColorStateList.valueOf((int) animation.getAnimatedValue())));
         valueAnimator.start();

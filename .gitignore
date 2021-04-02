@@ -13,5 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/app/release/app-release.aab
-/app/release/output-metadata.json
+/app/release/

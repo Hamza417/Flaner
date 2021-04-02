@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <app.simple.flaner.decoration.corners.DynamicCornerLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/mainBackground"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/switch_tension"
+                android:textColor="@color/textPrimary"
+                android:textSize="6pt" />
+
+            <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+                android:id="@+id/switch_tension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ani_ic_unfold_popup"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/medium"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textColor="@color/textTertiary"
+                android:textSize="5pt"
+                app:drawableTint="@color/iconSecondary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/switch_scaling"
+                android:textColor="@color/textPrimary"
+                android:textSize="6pt" />
+
+            <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+                android:id="@+id/switch_scaling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ani_ic_unfold_popup"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/medium"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textColor="@color/textTertiary"
+                android:textSize="5pt"
+                app:drawableTint="@color/iconSecondary" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/app_theme"
+                android:textColor="@color/textPrimary"
+                android:textSize="6pt" />
+
+            <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+                android:id="@+id/app_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ani_ic_unfold_popup"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/medium"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textColor="@color/textTertiary"
+                android:textSize="5pt"
+                app:drawableTint="@color/iconSecondary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/colors"
+                android:textColor="@color/textPrimary"
+                android:textSize="6pt" />
+
+            <ImageButton
+                android:id="@+id/app_accent_color"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_colors" />
+
+        </LinearLayout>
+
+        <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/bold"
+            android:padding="15dp"
+            android:text="@string/open_play_achievements"
+            android:textColor="@color/textPrimary"
+            android:textSize="6pt" />
+
+    </app.simple.flaner.decoration.corners.DynamicCornerLinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="switch_width">250dp</dimen>
+    <dimen name="switch_padding">15dp</dimen>
+    <dimen name="switch_thumb_dimensions">125dp</dimen>
+    <dimen name="dialog_elevation">20dp</dimen>
+    <dimen name="dialog_padding">15dp</dimen>
+</resources>

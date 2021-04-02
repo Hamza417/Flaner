@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Flaner" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorAppAccent">@color/inure</item>
+        <item name="colorAppAccentLight">@color/inure_light</item>
+
+        <item name="android:colorEdgeEffect">?attr/colorAppAccent</item>
+        <item name="android:statusBarColor">@color/mainBackground</item>
+        <item name="android:navigationBarColor">@color/mainBackground</item>
+        <item name="android:windowLightStatusBar">@bool/is_light_bars</item>
+    </style>
+</resources>

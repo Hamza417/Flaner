@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Flaner" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorAppAccent">@color/inure</item>
+        <item name="colorAppAccentLight">@color/inure_light</item>
+
+        <item name="android:colorEdgeEffect">?attr/colorAppAccent</item>
+        <item name="android:statusBarColor">@color/mainBackground</item>
+        <item name="android:navigationBarColor">@color/mainBackground</item>
+    </style>
+</resources>

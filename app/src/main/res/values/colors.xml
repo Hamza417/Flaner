@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mainBackground">#FFFFFF</color>
+    <color name="iconRegular">#2E2E2E</color>
+    <color name="iconSecondary">#B1B1B1</color>
+
+    <color name="textHeading">#121212</color>
+    <color name="textPrimary">#2B2B2B</color>
+    <color name="textSecondary">#5A5A5A</color>
+    <color name="textTertiary">#7A7A7A</color>
+
+    <color name="switchTrackOff">#F4F4F4</color>
+    <color name="thumbColor">#ffffff</color>
+</resources>

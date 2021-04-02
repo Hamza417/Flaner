@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Flâner</string>
+    <string name="open_play_achievements">Open Play Achievements…</string>
+    <string name="app_theme">App Theme</string>
+    <string name="high">High</string>
+    <string name="switch_tension">Switch Tension</string>
+    <string name="low">Low</string>
+    <string name="normal">Normal</string>
+    <string name="dark">Dark</string>
+    <string name="follow_system">Follow System</string>
+    <string name="light">Light</string>
+    <string name="switch_scaling">Switch Scaling</string>
+    <string name="colors">Colors</string>
+</resources>

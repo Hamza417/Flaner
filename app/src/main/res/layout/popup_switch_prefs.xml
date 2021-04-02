@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.simple.flaner.decoration.corners.DynamicCornerLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/mainBackground"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+        android:id="@+id/popup_low"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/bold"
+        android:maxLines="1"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="20dp"
+        android:text="@string/low"
+        android:textColor="@color/textPrimary"
+        android:textSize="6pt" />
+
+    <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+        android:id="@+id/popup_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="20dp"
+        android:text="@string/normal"
+        android:textColor="@color/textPrimary"
+        android:textSize="6pt" />
+
+    <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+        android:id="@+id/popup_high"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="20dp"
+        android:text="@string/high"
+        android:textColor="@color/textPrimary"
+        android:textSize="6pt" />
+
+</app.simple.flaner.decoration.corners.DynamicCornerLinearLayout>

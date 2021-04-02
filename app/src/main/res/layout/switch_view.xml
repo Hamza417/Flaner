@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.simple.flaner.switch.SwitchFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/switch_track"
+    android:layout_width="@dimen/switch_width"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/switchTrackOff"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:elevation="10dp"
+    android:padding="@dimen/switch_padding">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/switch_thumb"
+        android:layout_width="@dimen/switch_thumb_dimensions"
+        android:layout_height="@dimen/switch_thumb_dimensions"
+        android:layout_gravity="center_vertical"
+        app:cardCornerRadius="500dp"
+        android:clipToPadding="false"
+        app:cardElevation="20dp"
+        app:cardForegroundColor="@color/thumbColor"
+        android:background="@drawable/switch_thumb"
+        tools:ignore="ContentDescription" />
+
+</app.simple.flaner.switch.SwitchFrameLayout>
+
+
+

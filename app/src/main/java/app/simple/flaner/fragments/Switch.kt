@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.TextView
 import app.simple.flaner.R
@@ -18,6 +19,7 @@ class Switch : ScopedFragment() {
     private lateinit var switchView: SwitchView
     private lateinit var settings: ImageButton
     private lateinit var count: TextView
+    private lateinit var parent: FrameLayout
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = layoutInflater.inflate(R.layout.fragment_switch, container, false)
@@ -25,6 +27,7 @@ class Switch : ScopedFragment() {
         switchView = view.findViewById(R.id.switchView)
         settings = view.findViewById(R.id.app_settings)
         count = view.findViewById(R.id.count)
+        parent = view.findViewById(R.id.switch_container)
 
         switchView.tension = MainPreferences.getTension()
         switchView.scaling = MainPreferences.getScaling()
@@ -46,6 +49,10 @@ class Switch : ScopedFragment() {
                 MainPreferences.setCount(MainPreferences.getCount() + 1)
             }
         })
+
+        parent.setOnClickListener {
+            switchView.setChecked(!MainPreferences.isSwitchChecked())
+        }
 
         settings.setOnClickListener {
             Prefs.newInstance()

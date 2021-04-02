@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp">
@@ -141,20 +142,68 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="10dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_colors" />
+                android:src="@drawable/ic_colors"
+                tools:ignore="ContentDescription" />
 
         </LinearLayout>
 
-        <app.simple.flaner.decoration.ripple.DynamicRippleTextView
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="@font/bold"
-            android:padding="15dp"
-            android:text="@string/open_play_achievements"
-            android:textColor="@color/textPrimary"
-            android:textSize="6pt" />
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/haptic_feedback"
+                android:textColor="@color/textPrimary"
+                android:textSize="6pt" />
+
+            <CheckBox
+                android:id="@+id/haptic_feedback_checkbox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:buttonTint="?attr/colorAppAccent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/sound_feedback"
+                android:textColor="@color/textPrimary"
+                android:textSize="6pt" />
+
+            <CheckBox
+                android:id="@+id/sound_effect_checkbox"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:buttonTint="?attr/colorAppAccent" />
+
+        </LinearLayout>
 
     </app.simple.flaner.decoration.corners.DynamicCornerLinearLayout>
 

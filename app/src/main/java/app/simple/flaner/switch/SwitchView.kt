@@ -3,6 +3,9 @@ package app.simple.flaner.switch
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.media.SoundPool
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -15,21 +18,30 @@ import app.simple.flaner.utils.ColorUtils.resolveAttrColor
 import app.simple.flaner.utils.ViewUtils
 import app.simple.inure.decorations.switch.SwitchCallbacks
 import com.google.android.material.card.MaterialCardView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @SuppressLint("ClickableViewAccessibility")
-class SwitchView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0,
-) : SwitchFrameLayout(context, attrs, defStyleAttr) {
+class SwitchView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : SwitchFrameLayout(context, attrs, defStyleAttr) {
+
+    private var vibration: Vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+    private val soundPool = SoundPool.Builder().setMaxStreams(1).build()
+    private val soundId = soundPool.load(context, R.raw.boop, 1)
 
     private var thumb: MaterialCardView
     private var track: SwitchFrameLayout
     private var switchCallbacks: SwitchCallbacks? = null
 
     private var isChecked: Boolean = false
+
+    var haptic = false
+    var sound = false
     var scaling = 1.5F
     var tension = 1.5F
 
     init {
+
         val view = LayoutInflater.from(context).inflate(R.layout.switch_view, this, true)
 
         thumb = view.findViewById(R.id.switch_thumb)
@@ -94,6 +106,8 @@ class SwitchView @JvmOverloads constructor(
         Utils.animateBackground(ContextCompat.getColor(context, R.color.switchTrackOff), track)
         switchCallbacks?.onCheckedChanged(false)
         animateElevation(0F)
+
+        feedback()
     }
 
     private fun animateChecked() {
@@ -111,6 +125,33 @@ class SwitchView @JvmOverloads constructor(
         Utils.animateBackground(context.resolveAttrColor(R.attr.colorAppAccent), track)
         switchCallbacks?.onCheckedChanged(true)
         animateElevation(100F)
+
+        feedback()
+    }
+
+    private fun feedback() {
+        CoroutineScope(Dispatchers.Default).launch {
+            if (haptic) {
+                if (vibration.hasVibrator())
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        vibration.vibrate(VibrationEffect.createOneShot((25 / (tension / 5)).toLong(), 20))
+                    } else {
+                        @Suppress("deprecation")
+                        vibration.vibrate((50 / (tension / 5)).toLong())
+                    }
+            }
+
+            if (sound) {
+                soundPool.play(
+                    soundId,
+                    1F,
+                    1F,
+                    1,
+                    0,
+                    tension / 5F
+                )
+            }
+        }
     }
 
     private fun animateElevation(elevation: Float) {

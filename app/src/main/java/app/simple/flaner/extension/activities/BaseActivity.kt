@@ -60,7 +60,7 @@ open class BaseActivity : AppCompatActivity() {
             }
             else -> {
                 setTheme(R.style.Red)
-                AppearancePreferences.setAccentColor(ContextCompat.getColor(baseContext, R.color.inure))
+                AppearancePreferences.setAccentColor(ContextCompat.getColor(baseContext, R.color.red))
             }
         }
     }

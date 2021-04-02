@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatDelegate
 import app.simple.flaner.R
@@ -24,6 +26,8 @@ class Prefs : ScopedBottomSheetFragment() {
     private lateinit var tension: DynamicRippleTextView
     private lateinit var appTheme: DynamicRippleTextView
     private lateinit var appColor: ImageButton
+    private lateinit var sound: CheckBox
+    private lateinit var haptic: CheckBox
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = layoutInflater.inflate(R.layout.dialog_prefs, container, false)
@@ -32,6 +36,11 @@ class Prefs : ScopedBottomSheetFragment() {
         tension = view.findViewById(R.id.switch_tension)
         appTheme = view.findViewById(R.id.app_theme)
         appColor = view.findViewById(R.id.app_accent_color)
+        sound = view.findViewById(R.id.sound_effect_checkbox)
+        haptic = view.findViewById(R.id.haptic_feedback_checkbox)
+
+        sound.isChecked = MainPreferences.getSound()
+        haptic.isChecked = MainPreferences.getHaptic()
 
         setScalingText()
         setTensionText()
@@ -45,21 +54,21 @@ class Prefs : ScopedBottomSheetFragment() {
 
         scaling.setOnClickListener {
             SwitchScaling(
-                layoutInflater.inflate(R.layout.popup_switch_prefs, DynamicCornerLinearLayout(requireContext(), null), true),
+                layoutInflater.inflate(R.layout.popup_switch_prefs, DynamicCornerLinearLayout(requireContext()), true),
                 scaling
             )
         }
 
         tension.setOnClickListener {
             SwitchTension(
-                layoutInflater.inflate(R.layout.popup_switch_prefs, DynamicCornerLinearLayout(requireContext(), null), true),
+                layoutInflater.inflate(R.layout.popup_switch_prefs, DynamicCornerLinearLayout(requireContext()), true),
                 tension
             )
         }
 
         appTheme.setOnClickListener {
             PopupAppTheme(
-                layoutInflater.inflate(R.layout.popup_application_theme, DynamicCornerLinearLayout(requireContext(), null), true),
+                layoutInflater.inflate(R.layout.popup_application_theme, DynamicCornerLinearLayout(requireContext()), true),
                 appTheme
             )
         }
@@ -68,6 +77,14 @@ class Prefs : ScopedBottomSheetFragment() {
             AccentColor.newInstance()
                 .show(requireFragmentManager(), "color")
             this.dialog?.dismiss()
+        }
+
+        haptic.setOnCheckedChangeListener { _, isChecked ->
+            MainPreferences.setHaptic(isChecked)
+        }
+
+        sound.setOnCheckedChangeListener { _, isChecked ->
+            MainPreferences.setSound(isChecked)
         }
     }
 

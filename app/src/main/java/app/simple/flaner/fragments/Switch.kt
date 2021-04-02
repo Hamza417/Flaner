@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import app.simple.flaner.R
 import app.simple.flaner.extension.fragments.ScopedFragment
-import app.simple.flaner.preferences.AppearancePreferences
 import app.simple.flaner.preferences.MainPreferences
 import app.simple.flaner.switch.SwitchView
-import app.simple.flaner.utils.ThemeSetter
 import app.simple.inure.decorations.switch.SwitchCallbacks
 
 class Switch : ScopedFragment() {
@@ -27,6 +25,9 @@ class Switch : ScopedFragment() {
 
         switchView.tension = MainPreferences.getTension()
         switchView.scaling = MainPreferences.getScaling()
+        switchView.haptic = MainPreferences.getHaptic()
+        switchView.sound = MainPreferences.getSound()
+
         switchView.setChecked(MainPreferences.isSwitchChecked())
 
 
@@ -55,6 +56,12 @@ class Switch : ScopedFragment() {
             }
             MainPreferences.scaling -> {
                 switchView.scaling = MainPreferences.getScaling()
+            }
+            MainPreferences.haptic -> {
+                switchView.haptic = MainPreferences.getHaptic()
+            }
+            MainPreferences.sound -> {
+                switchView.sound = MainPreferences.getSound()
             }
         }
     }

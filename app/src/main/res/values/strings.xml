@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Flâner</string>
-    <string name="open_play_achievements">Open Play Achievements…</string>
     <string name="app_theme">App Theme</string>
     <string name="high">High</string>
     <string name="switch_tension">Switch Tension</string>
@@ -11,4 +10,6 @@
     <string name="light">Light</string>
     <string name="switch_scaling">Switch Scaling</string>
     <string name="colors">Colors</string>
+    <string name="haptic_feedback">Haptic Feedback</string>
+    <string name="sound_feedback">Sound Feedback</string>
 </resources>

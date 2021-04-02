@@ -11,6 +11,8 @@ object MainPreferences {
     private const val isSwitchChecked = "is_switch_checked"
     const val scaling = "scaling"
     const val tension = "tension"
+    const val haptic = "is_haptic_on"
+    const val sound = "is_sound_on"
 
     fun setIsSwitchChecked(boolean: Boolean) {
         getSharedPreferences().edit().putBoolean(isSwitchChecked, boolean).apply()
@@ -18,6 +20,22 @@ object MainPreferences {
 
     fun isSwitchChecked(): Boolean {
         return getSharedPreferences().getBoolean(isSwitchChecked, false)
+    }
+
+    fun setHaptic(boolean: Boolean) {
+        getSharedPreferences().edit().putBoolean(haptic, boolean).apply()
+    }
+
+    fun getHaptic(): Boolean {
+        return getSharedPreferences().getBoolean(haptic, false)
+    }
+
+    fun setSound(boolean: Boolean) {
+        getSharedPreferences().edit().putBoolean(sound, boolean).apply()
+    }
+
+    fun getSound(): Boolean {
+        return getSharedPreferences().getBoolean(sound, true)
     }
 
     fun setScaling(value: Float) {

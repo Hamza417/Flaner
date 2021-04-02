@@ -6,17 +6,6 @@
     android:clipChildren="false"
     android:clipToPadding="false">
 
-    <ImageButton
-        android:id="@+id/app_settings"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="end"
-        android:layout_margin="20dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_settings"
-        android:tint="@color/iconSecondary"
-        tools:ignore="ContentDescription" />
-
     <app.simple.flaner.switch.SwitchView
         android:id="@+id/switchView"
         android:layout_width="wrap_content"
@@ -24,5 +13,34 @@
         android:layout_gravity="center"
         android:clipChildren="false"
         android:clipToPadding="false" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="horizontal"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center_vertical"
+            android:textColor="@color/iconSecondary"
+            android:textSize="12pt" />
+
+        <ImageButton
+            android:id="@+id/app_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_settings"
+            android:tint="@color/iconSecondary"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import app.simple.flaner.R
 import app.simple.flaner.extension.fragments.ScopedFragment
 import app.simple.flaner.preferences.MainPreferences
@@ -16,20 +17,22 @@ class Switch : ScopedFragment() {
 
     private lateinit var switchView: SwitchView
     private lateinit var settings: ImageButton
+    private lateinit var count: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = layoutInflater.inflate(R.layout.fragment_switch, container, false)
 
         switchView = view.findViewById(R.id.switchView)
         settings = view.findViewById(R.id.app_settings)
+        count = view.findViewById(R.id.count)
 
         switchView.tension = MainPreferences.getTension()
         switchView.scaling = MainPreferences.getScaling()
         switchView.haptic = MainPreferences.getHaptic()
         switchView.sound = MainPreferences.getSound()
 
+        count.text = MainPreferences.getCount().toString()
         switchView.setChecked(MainPreferences.isSwitchChecked())
-
 
         return view
     }
@@ -40,6 +43,7 @@ class Switch : ScopedFragment() {
         switchView.setOnSwitchCheckedChangeListener(object : SwitchCallbacks {
             override fun onCheckedChanged(isChecked: Boolean) {
                 MainPreferences.setIsSwitchChecked(isChecked)
+                MainPreferences.setCount(MainPreferences.getCount() + 1)
             }
         })
 
@@ -62,6 +66,9 @@ class Switch : ScopedFragment() {
             }
             MainPreferences.sound -> {
                 switchView.sound = MainPreferences.getSound()
+            }
+            MainPreferences.count -> {
+                count.text = MainPreferences.getCount().toString()
             }
         }
     }

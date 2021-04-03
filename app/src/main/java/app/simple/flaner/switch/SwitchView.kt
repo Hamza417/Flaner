@@ -17,20 +17,19 @@ import app.simple.flaner.decoration.ripple.Utils
 import app.simple.flaner.utils.ColorUtils.resolveAttrColor
 import app.simple.flaner.utils.ViewUtils
 import app.simple.inure.decorations.switch.SwitchCallbacks
-import com.google.android.material.card.MaterialCardView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @SuppressLint("ClickableViewAccessibility")
-class SwitchView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : SwitchFrameLayout(context, attrs, defStyleAttr) {
+class SwitchView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : SwitchBackground(context, attrs, defStyleAttr) {
 
     private var vibration: Vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     private val soundPool = SoundPool.Builder().setMaxStreams(1).build()
     private val soundId = soundPool.load(context, R.raw.boop, 1)
 
-    private var thumb: MaterialCardView
-    private var track: SwitchFrameLayout
+    private var thumb: SwitchForeground
+    private var track: SwitchBackground
     private var switchCallbacks: SwitchCallbacks? = null
 
     private var isChecked: Boolean = false

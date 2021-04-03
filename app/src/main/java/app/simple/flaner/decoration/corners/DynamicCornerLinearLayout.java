@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.view.ViewOutlineProvider;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;

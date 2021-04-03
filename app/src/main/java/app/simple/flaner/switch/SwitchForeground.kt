@@ -9,17 +9,17 @@ import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
 
-open class SwitchFrameLayout @JvmOverloads constructor(
-        context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0,
+class SwitchForeground @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
-    init {
 
-        backgroundTintList = ColorStateList.valueOf(Color.TRANSPARENT)
+    init {
+        backgroundTintList = ColorStateList.valueOf(Color.WHITE)
 
         val shapeAppearanceModel = ShapeAppearanceModel()
-                .toBuilder()
-                .setAllCorners(CornerFamily.ROUNDED, 500F)
-                .build()
+            .toBuilder()
+            .setAllCorners(CornerFamily.ROUNDED, 500F)
+            .build()
 
         background = MaterialShapeDrawable(shapeAppearanceModel)
     }

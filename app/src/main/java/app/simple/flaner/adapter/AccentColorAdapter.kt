@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import app.simple.flaner.R
 import app.simple.flaner.decoration.corners.DynamicCornerLinearLayout
 import app.simple.flaner.preferences.AppearancePreferences
+import app.simple.flaner.utils.ViewUtils.makeGoAway
+import app.simple.flaner.utils.ViewUtils.makeVisible
 import org.jetbrains.annotations.NotNull
 
 class AccentColorAdapter : RecyclerView.Adapter<AccentColorAdapter.Holder>() {
@@ -49,10 +51,10 @@ class AccentColorAdapter : RecyclerView.Adapter<AccentColorAdapter.Holder>() {
             palettesAdapterCallbacks.onColorPressed(list[position])
         }
 
-        holder.tick.visibility = if (list[position] == AppearancePreferences.getAccentColor()) {
-            View.VISIBLE
+        if (list[position] == AppearancePreferences.getAccentColor()) {
+            holder.tick.makeVisible()
         } else {
-            View.INVISIBLE
+            holder.tick.makeGoAway()
         }
     }
 

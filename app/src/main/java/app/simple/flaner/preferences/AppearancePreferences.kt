@@ -8,11 +8,8 @@ import app.simple.flaner.preferences.SharedPreferences.getSharedPreferences
 object AppearancePreferences {
 
     private const val appCornerRadius = "corner_radius"
-    private const val dimWindows = "is_dimming_windows_on"
-    private const val shadows = "are_shadows_on"
 
     const val accentColor = "app_accent_color"
-    const val appFont = "type_face"
     const val appTheme = "app_theme"
 
     // ---------------------------------------------------------------------------------------------------------- //
@@ -33,26 +30,6 @@ object AppearancePreferences {
 
     fun getCornerRadius(): Int {
         return getSharedPreferences().getInt(appCornerRadius, 60)
-    }
-
-    // ---------------------------------------------------------------------------------------------------------- //
-
-    fun setDimWindows(boolean: Boolean) {
-        getSharedPreferences().edit().putBoolean(dimWindows, boolean).apply()
-    }
-
-    fun isDimmingOn(): Boolean {
-        return getSharedPreferences().getBoolean(dimWindows, true)
-    }
-
-    // ---------------------------------------------------------------------------------------------------------- //
-
-    fun setShadows(boolean: Boolean) {
-        getSharedPreferences().edit().putBoolean(shadows, boolean).apply()
-    }
-
-    fun areShadowsOn(): Boolean {
-        return getSharedPreferences().getBoolean(shadows, true)
     }
 
     // ---------------------------------------------------------------------------------------------------------- //

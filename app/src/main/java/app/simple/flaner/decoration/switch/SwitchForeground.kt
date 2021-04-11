@@ -1,4 +1,4 @@
-package app.simple.flaner.switch
+package app.simple.flaner.decoration.switch
 
 import android.content.Context
 import android.content.res.ColorStateList

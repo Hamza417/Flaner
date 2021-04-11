@@ -8,4 +8,8 @@
 
     <color name="switchTrackOff">#5C5C5C</color>
     <color name="thumbColor">#ffffff</color>
+
+    <!-- Knob -->
+    <color name="knobOutlineAndIndicatorIdle">#7ABCBCBC</color>
+    <color name="knobHolder">#000000</color>
 </resources>

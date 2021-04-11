@@ -11,7 +11,7 @@ import android.widget.TextView
 import app.simple.flaner.R
 import app.simple.flaner.extension.fragments.ScopedFragment
 import app.simple.flaner.preferences.MainPreferences
-import app.simple.flaner.switch.SwitchView
+import app.simple.flaner.decoration.switch.SwitchView
 import app.simple.inure.decorations.switch.SwitchCallbacks
 
 class Switch : ScopedFragment() {

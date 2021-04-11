@@ -5,4 +5,5 @@
     <dimen name="switch_thumb_dimensions">125dp</dimen>
     <dimen name="dialog_elevation">20dp</dimen>
     <dimen name="dialog_padding">15dp</dimen>
+    <dimen name="volume_knob_dimension">250dp</dimen>
 </resources>

@@ -13,6 +13,7 @@ object MainPreferences {
     const val haptic = "is_haptic_on"
     const val sound = "is_sound_on"
     const val count = "count"
+    const val knobCount = "knob_count"
 
     fun setIsSwitchChecked(boolean: Boolean) {
         getSharedPreferences().edit().putBoolean(isSwitchChecked, boolean).apply()
@@ -60,5 +61,13 @@ object MainPreferences {
 
     fun getCount(): Int {
         return getSharedPreferences().getInt(count, 0)
+    }
+
+    fun setKnobCount(value: Float) {
+        getSharedPreferences().edit().putFloat(knobCount, value).apply()
+    }
+
+    fun getKnobCount(): Float {
+        return getSharedPreferences().getFloat(knobCount, 0F)
     }
 }

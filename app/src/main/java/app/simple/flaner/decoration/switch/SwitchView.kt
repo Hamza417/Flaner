@@ -1,4 +1,4 @@
-package app.simple.flaner.switch
+package app.simple.flaner.decoration.switch
 
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint

@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/switch_container"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    android:layout_height="match_parent">
 
-    <app.simple.flaner.decoration.switch.SwitchView
-        android:id="@+id/switchView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:clipChildren="false"
-        android:clipToPadding="false" />
+    <app.simple.flaner.decoration.knob.RotaryKnobView
+        android:id="@+id/knob"
+        android:layout_width="@dimen/volume_knob_dimension"
+        android:layout_height="@dimen/volume_knob_dimension"
+        android:layout_gravity="center" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,23 +18,23 @@
         android:padding="25dp">
 
         <TextView
-            android:id="@+id/count"
+            android:id="@+id/knob_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
             android:fontFamily="@font/bold"
             android:gravity="center_vertical"
             android:textColor="@color/iconSecondary"
             android:textSize="12pt" />
 
         <ImageButton
-            android:id="@+id/app_settings"
+            android:id="@+id/knob_settings"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:src="@drawable/ic_settings"
             android:tint="@color/iconSecondary"
+            android:visibility="gone"
             tools:ignore="ContentDescription" />
 
     </LinearLayout>

@@ -12,4 +12,5 @@
     <string name="colors">Colors</string>
     <string name="haptic_feedback">Haptic Feedback</string>
     <string name="sound_feedback">Sound Feedback</string>
+    <string name="knob">Knob</string>
 </resources>

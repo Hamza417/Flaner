@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<app.simple.flaner.switch.SwitchBackground xmlns:android="http://schemas.android.com/apk/res/android"
+<app.simple.flaner.decoration.switch.SwitchBackground xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/switch_track"
     android:layout_width="@dimen/switch_width"
@@ -10,7 +10,7 @@
     android:elevation="10dp"
     android:padding="@dimen/switch_padding">
 
-    <app.simple.flaner.switch.SwitchForeground
+    <app.simple.flaner.decoration.switch.SwitchForeground
         android:id="@+id/switch_thumb"
         android:layout_width="@dimen/switch_thumb_dimensions"
         android:layout_height="@dimen/switch_thumb_dimensions"
@@ -20,7 +20,7 @@
         android:elevation="20dp"
         tools:ignore="ContentDescription" />
 
-</app.simple.flaner.switch.SwitchBackground>
+</app.simple.flaner.decoration.switch.SwitchBackground>
 
 
 

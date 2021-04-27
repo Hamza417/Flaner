@@ -16,8 +16,6 @@ it does not contain any unnecessary dependencies.
 <br>
 
 ## Downloads and Stats
-[![Free](https://img.shields.io/badge/Download-Play%20Store-839192?style=flat&logo=google%20play)](https://play.google.com/store/apps/details?id=app.simple.flaner) <br>
-
 [![From Github](https://img.shields.io/github/downloads/Hamza417/Flaner/total?color=white&label=Download%20%28GitHub%29&logo=github)](https://github.com/Hamza417/Flaner/releases/download/Build06/app-release.apk) <br>
 
 ![](https://img.shields.io/tokei/lines/github/Hamza417/Flaner?color=orange&label=Total%20Lines&logo=kotlin&logoColor=white) <br>

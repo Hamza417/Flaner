@@ -6,11 +6,9 @@
 <br>
 
 ## What's this?
-Meaning to stroll aimlessly and still enjoy the moment 👅,
-this app aims the same purpose. Although designed as a mere
-switch for my apps it turned out to be too good to be used as 
-a switch only hence this app. It is cute, it's free and
-it does not contain any unnecessary dependencies.
+This is a switch demo app created as showcase app to test the usability and UX of the idea.
+
+Currently this switch is being used as a primary toggle element in the apps [Positional](https://github.com/Hamza417/Positional) and [Inure](https://github.com/Hamza417/Inure).
 
 <br>
 <br>

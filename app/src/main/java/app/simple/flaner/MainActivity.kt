@@ -1,16 +1,15 @@
 package app.simple.flaner
 
 import android.os.Bundle
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import app.simple.flaner.adapter.PagerAdapter
 import app.simple.flaner.extension.activities.BaseActivity
 import app.simple.flaner.fragments.Knob
 import app.simple.flaner.fragments.Switch
-import app.simple.flaner.utils.NullSafety.isNull
 
 class MainActivity : BaseActivity() {
 
-    private lateinit var viewPager: ViewPager
+    private lateinit var viewPager: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +17,7 @@ class MainActivity : BaseActivity() {
 
         viewPager = findViewById(R.id.app_container)
 
-        val pagerAdapter = PagerAdapter(supportFragmentManager, 0)
+        val pagerAdapter = PagerAdapter(this)
 
         pagerAdapter.addFragment(Switch.newInstance())
         pagerAdapter.addFragment(Knob.newInstance())
